@@ -1,1 +1,14 @@
-Hello World
+<!doctype html>
+<head>
+  <title>markdown previewer</title>
+  <meta chrset="utf-8">
+  <script src="js/marked.min.js"></script>
+</head>
+<body>
+  <div id="content"></div>
+  <script>
+    document.getElementByI('content').innerHTML =
+    marked('# Marked in browser\n\nRendered by **marked**.);
+  </script>
+</body>
+</html>
