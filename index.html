@@ -3,11 +3,25 @@
   <title>markdown previewer</title>
   <meta chrset="utf-8">
   <script src="js/marked.min.js"></script>
+  <script   src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 </head>
 <body>
+  <input type="text" id="input">
   <div id="content"></div>
   <script>
-    document.getElementById('content').innerHTML = marked('# Marked in browser\n\nRendered by **marked**.');
+    $("#input").each(function(){
+      $(this).bind('keyup', convert(this));
+    });
+    function convert(elm){
+    var v, old = elm.value;
+    return function(){
+    if(old != (v=elm.value)){
+    old = v;
+    str = $(this).val();
+    document.getElementById('content').innerHTML = marked(str);
+    }
+    }
+    }
   </script>
 </body>
 </html>
