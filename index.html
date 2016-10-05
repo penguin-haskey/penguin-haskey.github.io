@@ -15,7 +15,7 @@
     $(document).ready(function(){
     var input = document.getElementById('input');
     document.getElementById('preview').innerHTML = marked(input);
-    });
+    })
     $("#input").each(function(){
       $(this).bind('keyup', convert(this));
     });
