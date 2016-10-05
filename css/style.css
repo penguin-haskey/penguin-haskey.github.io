@@ -12,6 +12,7 @@ body{
 textarea{
     width: 50%;
     height: 100%;
+    border: none;
 }
 #preview{
     width: 50%;
