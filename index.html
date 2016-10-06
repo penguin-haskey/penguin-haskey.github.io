@@ -15,8 +15,8 @@
   <script>
     var renderer = new marked.Renderer();
 
-    renderer.html = function (html) {
-      console.log(html);
+    renderer.paragraph = function (paragraph) {
+      return paragraph.replace(/\r?\n/g, '<br>');
     };
     var str;
     $(document).ready(function(){
