@@ -38,7 +38,7 @@
     }
 
     function download(){
-    var text = '<!doctype html><head><meta charset="utf-8"></head><body>' + marked(str) + '</body>';
+    var text = '<!doctype html><head><meta charset="utf-8"></head><body>' + marked(str, {renderer: renderer}) + '</body>';
     console.log(text);
     var blob = new Blob([text], {type: "text/html;charset=UTF-8"}); // バイナリデータを作ります。
 
