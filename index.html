@@ -34,22 +34,8 @@
     }
 
     function download(){
-    var pdf = { content: 'This is an sample PDF printed with pdfMake'}
-    var blob = new Blob([pdf], {type: "pdf"}); // バイナリデータを作ります。
-
-    // IEか他ブラウザかの判定
-    if(window.navigator.msSaveBlob)
-    {
-    // IEなら独自関数を使います。
-    window.navigator.msSaveBlob(blob, "ファイル名.txt");
-    } else {
-    // それ以外はaタグを利用してイベントを発火させます
-    var a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.target = '_blank';
-    a.download = 'ファイル名.txt';
-    a.click();
-    }
+    var pdf = { content: 'This is an sample PDF printed with pdfMake'};
+    pdfMake.createPdf(pdf).download('preview.pdf');
     }
     
 
