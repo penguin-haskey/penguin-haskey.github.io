@@ -32,13 +32,13 @@
     if(old != (v=elm.value)){
     old = v;
     str = $(this).val();
-    document.getElementById('preview').innerHTML = '<!doctype html><head><meta chrset="utf-8"></head><body>' + marked(str, {renderer: renderer}) + '</body>';
+    document.getElementById('preview').innerHTML = '<!doctype html><head><meta chrset="utf-8"><link rel="stylesheet" type="text/css" href="css/github.css"></head><body>' + marked(str, {renderer: renderer}) + '</body>';
     }
     }
     }
 
     function download(){
-    var text = '<!doctype html><head><meta charset="utf-8"></head><body>' + marked(str, {renderer: renderer}) + '</body>';
+    var text = '<!doctype html><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="css/github.css"></head><body>' + marked(str, {renderer: renderer}) + '</body>';
     console.log(text);
     var blob = new Blob([text], {type: "text/html;charset=UTF-8"}); // バイナリデータを作ります。
 
