@@ -33,7 +33,7 @@
     }
 
     function download(){
-    var text = str;
+    var text = marked(str);
 
     var blob = new Blob([text], {type: "text/plain"}); // バイナリデータを作ります。
 
