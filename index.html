@@ -13,7 +13,8 @@
   <script src="js/jquery.min.js"></script>
   <script>
     $(document).ready(function(){
-
+    var input = document.getElementById('input').innerHTML;
+    document.getElementById('preview').innerHTML = marked(str);
     });
     $("#input").each(function(){
       $(this).bind('keyup', convert(this));
