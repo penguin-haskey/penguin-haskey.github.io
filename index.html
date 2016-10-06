@@ -16,7 +16,7 @@
     var str;
     $(document).ready(function(){
     str = document.getElementById('input').innerHTML;
-    document.getElementById('preview').innerHTML = marked(str, { renderer: renderer });
+    document.getElementById('preview').innerHTML = marked(str);
     });
     $("#input").each(function(){
       $(this).bind('keyup', convert(this));
@@ -27,7 +27,7 @@
     if(old != (v=elm.value)){
     old = v;
     str = $(this).val();
-    document.getElementById('preview').innerHTML = '<!doctype html><head><meta chrset="utf-8"></head><body>' + marked(str ,{ renderer: renderer }) + '</body>';
+    document.getElementById('preview').innerHTML = '<!doctype html><head><meta chrset="utf-8"></head><body>' + marked(str) + '</body>';
     }
     }
     }
