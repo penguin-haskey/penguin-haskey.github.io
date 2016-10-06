@@ -15,9 +15,10 @@
   <script src="js/pdfmake.min.js"></script>
   <script src="js/vfs_fonts.js"></script>
   <script>
+    var str;
     $(document).ready(function(){
-    var input = document.getElementById('input').innerHTML;
-    document.getElementById('preview').innerHTML = marked(input);
+    str = document.getElementById('input').innerHTML;
+    document.getElementById('preview').innerHTML = marked(str);
     });
     $("#input").each(function(){
       $(this).bind('keyup', convert(this));
@@ -35,7 +36,7 @@
 
     function download(){
     var pdf = { content: 'This is an sample PDF printed with pdfMake'};
-    pdfMake.createPdf(pdf).download('preview.pdf');
+    pdfMake.createPdf(str).download('preview.pdf');
     }
     
 
