@@ -35,8 +35,8 @@
     }
 
     function download(){
-    var pdf = { content: 'This is an sample PDF printed with pdfMake'};
-    pdfMake.createPdf(str).download('preview.pdf');
+    var pdf = { content: str};
+    pdfMake.createPdf(pdf).download('preview.pdf');
     }
     
 
