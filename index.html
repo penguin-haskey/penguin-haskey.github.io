@@ -35,7 +35,7 @@
     function download(){
     var text = marked(str);
 
-    var blob = new Blob([text], {type: "text/plain"}); // バイナリデータを作ります。
+    var blob = new Blob([text], {type: "text/html"}); // バイナリデータを作ります。
 
     // IEか他ブラウザかの判定
     if(window.navigator.msSaveBlob)
