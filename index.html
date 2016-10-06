@@ -16,7 +16,7 @@
     var renderer = new marked.Renderer();
 
     renderer.html = function (html) {
-      return html.replace(/\r?\n/g, '<br>');
+      console.log(html);
     };
     var str;
     $(document).ready(function(){
