@@ -13,6 +13,11 @@
   <script src="js/marked.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script>
+    var renderer = new marked.Renderer();
+
+    renderer.html = function (html) {
+      return html.replace(/\r?\n/g, '<br>');
+    };
     var str;
     $(document).ready(function(){
     str = document.getElementById('input').innerHTML;
